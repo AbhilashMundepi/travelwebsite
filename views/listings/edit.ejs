@@ -1,0 +1,50 @@
+<% layout("/layouts/boilerplate") %>
+    <h3>Edit your Listing</h3>
+    <form  method="post"  action="/listings/<%=listing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+         <label for="title" class="form-label">Title</label>
+         <input name="listing[title]"  value="<%= listing.title %>"  type="text" required class="form-control">
+         <div class="valid-feedback">Title looks good!</div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" required <%= listing.description %> class="form-control"  ></textarea>
+            <div class="valid-feedback">Please enter short description</div>
+        </div>
+        
+        <div class="mb-3">
+            <img src="<%= listing.image.url %>" >
+        </div>
+
+        <div class="mb-3">
+            <label for="image" class="form-label"> Upload New Image </label>
+            <input name="listing[image]"   type="file"  class="form-control">
+            <div class="valid-feedback">please enter a valid link for image</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]"  value="<%= listing.price %>" type="number" required class="form-label">
+            <div class="valid-feedback">price should be valid</div>
+        </div>
+      
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]"  value="<%= listing.country %>" type="text" required class="form-control">
+            <div class="valid-feedback">Country name  should be valid</div>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]"  value="<%= listing.location %>" type="text"  class="form-control" requireds>
+            <div class="valid-feedback">location should be valid</div>
+        </div>
+        <br>
+
+        
+        
+        <button  class="btn btn-dark add-btn">Edit</button>
+        <br> <br>
+
+    </form>
