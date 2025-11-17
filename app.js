@@ -75,7 +75,7 @@ app.use((req, res, next) => {
 });
 
 // ============ ROUTES ===================
-app.get("/listings", (req, res) => {
+app.get("/", (req, res) => {
     res.send("hi, I am root — Render Deployment Success 🎉");
 });
 
